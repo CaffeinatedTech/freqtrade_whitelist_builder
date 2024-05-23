@@ -51,7 +51,7 @@ func downloadData(args Args) {
 	fmt.Print("Downloading historical data...")
 
 	cmd := exec.Command(args.path+"/.venv/bin/python", args.path+"/freqtrade", "download-data", "--userdir", args.path+"/user_data",
-		"--timerange", args.downloadTimerange, "-c", args.path+"/user_data/"+args.config, "--timeframes", args.timeframe)
+		"--timerange", args.downloadTimerange, "-c", args.path + "/user_data/config-whitelist-builder.json", "--timeframes", args.timeframe)
   var execOut bytes.Buffer
   var execErr bytes.Buffer
 	cmd.Stdout = &execOut
@@ -69,7 +69,7 @@ func downloadData(args Args) {
     fmt.Print("\r\033[K\r")
     fmt.Print("Downloading informative pairs historical data...")
     cmdArgs := []string{args.path+"/freqtrade", "download-data", "--userdir", args.path+"/user_data", 
-      "--timerange", args.downloadTimerange, "-c", args.path+"/user_data/"+args.config, "--pairs", args.informPairs, "--timeframes", args.informTimeframes}
+      "--timerange", args.downloadTimerange, "-c", args.path + "/user_data/config-whitelist-builder.json", "--pairs", args.informPairs, "--timeframes", args.informTimeframes}
     cmdArgs = append(cmdArgs, timeframesArray...)
     cmd := exec.Command(args.path+"/.venv/bin/python", cmdArgs...)
     var execOut bytes.Buffer

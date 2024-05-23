@@ -151,7 +151,6 @@ func main() {
 	if !args.noDownload {
 		downloadData(args)
 	}
-
 	results := []Pair{}
 
 	for len(marketPairs) > 0 {
