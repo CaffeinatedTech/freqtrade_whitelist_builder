@@ -49,7 +49,7 @@ At minimum you should supply the strategy to use.
 | -c --config | The name of the config file to pull the exchange and blacklist from (defaults to config.json) | -c config_bybit.json |
 | -e --exchange | The exchange to use, otherwise it will be fetched from the current config.json | -f bybit |
 | -n --num-pairs | The number of pairs to return for your whitelist (defaults to 50) | -n 75 |
-| -ip --inform-pairs | The informative pairs used by your strategy - it will also downlaod the data for these | -ip "BTC/USDT ETH/USDT" |
+| -ip --inform-pairs | The informative pairs used by your strategy or 'ALL' - it will also downlaod the data for these | -ip "BTC/USDT ETH/USDT" |
 | -it --inform-timeframes | The timeframes for your informative pairs | -it "1h 4h" |
 | -tm --trading-mode | Are you using SPOT or FUTURES? (defaults to SPOT) | -tm FUTURES |
 | -nd --no-download | Skip downloading historical data - if you already have it | -nd |

@@ -15,7 +15,7 @@ func printUsage() {
   fmt.Println("  -e, -exchange: Specify the exchange to pull the pairs from (Default: binance)")
   fmt.Println("  -tm, -trading-mode: Specify the trading mode (Default: spot)")
   fmt.Println("  -nd, -no-download: Do not download historical data (Default: false)")
-  fmt.Println("  -ip, -inform-pairs: Specify the informative pairs for your strategy (\"BTC/USDT ETH/USDT\")")
+  fmt.Println("  -ip, -inform-pairs: Specify the informative pairs for your strategy (\"BTC/USDT ETH/USDT\") or (ALL)")
   fmt.Println("  -it, -inform-timeframes: Specify the informative pairs timeframes for your strategy (\"1h 4h\")")
   fmt.Println("\n Example: whitelist_builder -s RSI -p /home/user/freqtrade -t 20210101-20210131 -c config.json -n 100 -e binance -tm spot")
   fmt.Print("\n")

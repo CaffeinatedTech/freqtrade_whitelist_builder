@@ -68,8 +68,14 @@ func downloadData(args Args) {
     timeframesArray := strings.Split(args.informTimeframes, " ")
     fmt.Print("\r\033[K\r")
     fmt.Print("Downloading informative pairs historical data...")
-    cmdArgs := []string{args.path+"/freqtrade", "download-data", "--userdir", args.path+"/user_data", 
-      "--timerange", args.downloadTimerange, "-c", args.path + "/user_data/config-whitelist-builder.json", "--pairs", args.informPairs, "--timeframes", args.informTimeframes}
+    var cmdArgs []string
+    if args.informPairs == "ALL" {
+      cmdArgs = []string{args.path+"/freqtrade", "download-data", "--userdir", args.path+"/user_data", 
+        "--timerange", args.downloadTimerange, "-c", args.path + "/user_data/config-whitelist-builder.json", "--timeframes", args.informTimeframes}
+    } else {
+      cmdArgs = []string{args.path+"/freqtrade", "download-data", "--userdir", args.path+"/user_data", 
+        "--timerange", args.downloadTimerange, "-c", args.path + "/user_data/config-whitelist-builder.json", "--pairs", args.informPairs, "--timeframes", args.informTimeframes}
+    }
     cmdArgs = append(cmdArgs, timeframesArray...)
     cmd := exec.Command(args.path+"/.venv/bin/python", cmdArgs...)
     var execOut bytes.Buffer
